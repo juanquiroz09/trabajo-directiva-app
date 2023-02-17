@@ -5,4 +5,7 @@
   <input type="submit" value="Registrar" (click)="registroUsuario()">
 </form>
 <br>
-<p *ngIf="registro">{{message}} como {{nombre}} {{apellido}}</p>
+<p *ngIf="registro; else sinRegistro">{{message}} como {{nombre}} {{apellido}}</p>
+<ng-template #sinRegistro>
+  <p>Nadie Registrado</p>
+</ng-template>
